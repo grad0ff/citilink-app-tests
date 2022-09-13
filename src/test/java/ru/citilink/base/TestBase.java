@@ -13,10 +13,10 @@ import ru.citilink.managers.LocalMobileWDManager;
 public class TestBase {
 
     protected static CredentialsConfig credentialsConfig = ConfigFactory.create(CredentialsConfig.class);
-    private static AbstractWDManager manager;
+    private static final AbstractWDManager manager;
 
     static {
-        String deviceHost = System.getProperty("deviceHost", "real"); // todo
+        String deviceHost = System.getProperty("deviceHost", "browserstack");
         switch (deviceHost) {
             case "browserstack":
                 manager = BrowserstackMobileWDManager.create();
