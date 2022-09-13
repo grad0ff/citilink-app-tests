@@ -1,5 +1,5 @@
-<a href="https://www.citilink.ru/"><img alt="citilink.ru" height="40" src="readme_files/citilink.gif"/>
-</a>
+<a href="https://www.citilink.ru/"><img alt="citilink.ru" height="40" src="readme_files/citilink.gif"/></a>
+
 # Сitilink App. Автотесты на Java
 
 ## Содержание :bookmark_tabs:
@@ -8,20 +8,20 @@
 * <a href="#objects">Объекты тестирования</a>
 * <a href="#console">Запуск тестов из консоли</a>
 * <a href="#code">Код</a>
-  + <a href="#intelij">InteliJ IDEA, Java, JUnit 5, Selenide</a>
-  + <a href="#gradle">Gradle</a>
+    + <a href="#intelij">InteliJ IDEA, Java, JUnit 5, Selenide</a>
+    + <a href="#gradle">Gradle</a>
 * <a href="#screenshot">Скриншоты и видео</a>
-  + <a href="#appium">Appium</a>
-  + <a href="#browserstack">Browserstack</a>
-  + <a href="#jenkins">Jenkins</a>
-  + <a href="#allure_testops">Allure TestOps</a>
-  + <a href="#allure">Allure</a>
-  + <a href="#notificatios">Уведомления</a>
-
-
+    + <a href="#appium">Appium</a>
+    + <a href="#browserstack">Browserstack</a>
+    + <a href="#jenkins">Jenkins</a>
+    + <a href="#allure_testops">Allure TestOps</a>
+    + <a href="#allure">Allure</a>
+    + <a href="#notificatios">Уведомления</a>
 
 <a id="stack"></a>
+
 ## Cтек технологий :hammer_and_wrench:
+
 <div align="center">
 <a href="https://www.jetbrains.com/idea/"><img alt="InteliJ IDEA" height="50" src="readme_files/technologies/intelij_idea.svg" width="50"/></a>
 <a href="https://www.java.com/"><img alt="Java" height="50" src="readme_files/technologies/Java.svg" width="50"/></a>
@@ -39,63 +39,67 @@
 
 
 <a id="objects"></a>
+
 ## Объекты тестирования :mag:
+
 Разработаны автотесты для проверок:
 
 :white_check_mark: авторизации пользователя в приложении
 
 :white_check_mark: смены пользователем текущего города
 
-
-
 <a id="console"></a>
+
 ## Запуск тестов из консоли :computer:
+
 ```bash
 gradle clean test
 -DdeviceHost=${DEVICE_HOST}
 ```
+
 > `${DEVICE_HOST}` - устройство для прогона тестов [ browserstack <sub>(default)</sub> , *emulator* , *real*  ]
 
-
-
 ## Код :floppy_disk:
+
 <a id="code"></a>
+
 #### <img alt="InteliJ IDEA" height="50" src="readme_files/technologies/intelij_idea.svg" width="50"/>InteliJ IDEA</a><img alt="Java" height="50" src="readme_files/technologies/java.svg" width="50"/>Java</a><img alt="JUnit 5" height="50" src="readme_files/technologies/junit5.svg" width="50"/>JUnit 5</a><img alt="Selenide" height="50" src="readme_files/technologies/selenide.svg" width="50"/>Selenide</a>
+
 > *Оформление кода автотестов*
 
 ```java
+
 @Tag("MOBILE")
 @Owner("grad0ff")
 @Feature("Work with App")
 @DisplayName("Android mobile tests")
 public class AndroidTests extends TestBase {
 
-  @Test
-  @Story("User authorizes in app by login and password")
-  @Description("Check that user can authorize in app by login and password")
-  @DisplayName("Authorization by login/password test")
-  void editProfileSettingsTest() {
-    ProfilePage profilePage = new ProfilePage();
+    @Test
+    @Story("User authorizes in app by login and password")
+    @Description("Check that user can authorize in app by login and password")
+    @DisplayName("Authorization by login/password test")
+    void editProfileSettingsTest() {
+        ProfilePage profilePage = new ProfilePage();
 
-    step("Run app", () -> {
-      open();
-      sleep(1000);
-    });
-    step("Close all popups if they visible", () -> {
-      BasePage.updateLater();
-      switchTo().alert().accept();
-    });
-    step("Tap by profile icon at footer", BasePage::tapByProfileIcon);
-    step("Tap by login button'", profilePage::tapByAuthButton);
-    step("Authorize in app by login and password", () -> {
-      profilePage.authPopup
-              .tapByLoginWithPasswordLink()
-              .inputLoginAndPassword(credentialsConfig.getEmail(), credentialsConfig.getPassword())
-              .tapByEnterButton();
-    });
-    step("Check that user is successful authorized", () ->
-            profilePage.userEmailLabel.shouldHave(text("@")));
-  }
+        step("Run app", () -> {
+            open();
+            sleep(1000);
+        });
+        step("Close all popups if they visible", () -> {
+            BasePage.updateLater();
+            switchTo().alert().accept();
+        });
+        step("Tap by profile icon at footer", BasePage::tapByProfileIcon);
+        step("Tap by login button'", profilePage::tapByAuthButton);
+        step("Authorize in app by login and password", () ->
+                profilePage.authPopup
+                        .tapByLoginWithPasswordLink()
+                        .inputLoginAndPassword(credentialsConfig.getEmail(), credentialsConfig.getPassword())
+                        .tapByEnterButton());
+        step("Check that user is successful authorized", () ->
+                profilePage.userEmailLabel.shouldHave(text("@")));
+    }
 }
 ```
 
@@ -103,16 +107,17 @@ public class AndroidTests extends TestBase {
 
 <a id="gradle"></a>
 #### <img alt="Gradle" height="50" src="readme_files/technologies/Gradle.svg" width="50"/>Gradle</a>
+
 > *Автоматическая сборка проекта и управление зависимостями*
 
 ```groovy
 plugins {
-  id 'java-library'
-  id 'io.qameta.allure' version '2.10.0'
+    id 'java-library'
+    id 'io.qameta.allure' version '2.10.0'
 }
 
 repositories {
-  mavenCentral()
+    mavenCentral()
 }
 
 def jUnitVersion = '5.8.2',
@@ -125,24 +130,25 @@ def jUnitVersion = '5.8.2',
     slf4jVersion = '1.7.36'
 
 dependencies {
-  testImplementation(
-          "org.junit.jupiter:junit-jupiter:$jUnitVersion",
-          "io.appium:java-client:$appiumVersion",
-          "com.codeborne:selenide:$selenideVersion",
-          "io.rest-assured:rest-assured:$restAssuredVersion",
-          "org.aeonbits.owner:owner:$ownerVersion",
-          "io.qameta.allure:allure-selenide:$allureVersion",
-          "io.qameta.allure:allure-rest-assured:$allureVersion",
-          "commons-io:commons-io:$commonsIoVersion",
-          "org.slf4j:slf4j-simple:$slf4jVersion",
-  )
+    testImplementation(
+            "org.junit.jupiter:junit-jupiter:$jUnitVersion",
+            "io.appium:java-client:$appiumVersion",
+            "com.codeborne:selenide:$selenideVersion",
+            "io.rest-assured:rest-assured:$restAssuredVersion",
+            "org.aeonbits.owner:owner:$ownerVersion",
+            "io.qameta.allure:allure-selenide:$allureVersion",
+            "io.qameta.allure:allure-rest-assured:$allureVersion",
+            "commons-io:commons-io:$commonsIoVersion",
+            "org.slf4j:slf4j-simple:$slf4jVersion",
+    )
 }
 ```
 
 
 
 <a id="appium"></a>
-#### ><img alt="Appium" height="50" src="readme_files/technologies/appium.svg" width="50"/>Appium</a>
+#### > <img alt="Appium" height="50" src="readme_files/technologies/appium.svg" width="50"/>Appium</a>
+
 > *Обчепечение прогона автотестов на эмуляторе или реальном устройстве*
 
 <img src="#" alt="Appium">
@@ -150,9 +156,12 @@ dependencies {
 
 
 <a id="jenkins"></a>
-####  <a href="https://www.jenkins.io/"><img alt="Jenkins" height="50" src="readme_files/technologies/Jenkins.svg" width="50"/>Jenkins</a>
-> *Решение комплекса задач по сборке проекта, прогону автотестов, получению отчетов и отправке уведомлений по результатам сборки*
-  
+
+#### <a href="https://www.jenkins.io/"><img alt="Jenkins" height="50" src="readme_files/technologies/Jenkins.svg" width="50"/>Jenkins</a>
+
+> *Решение комплекса задач по сборке проекта, прогону автотестов, получению отчетов и отправке уведомлений по
+результатам сборки*
+
 <a href="https://jenkins.autotests.cloud/job/013-grad0ff-14-itoolabs/">
 <img src="https://user-images.githubusercontent.com/72714071/177363720-95c14959-fac7-4af4-9145-eb1987631229.png" alt="Jenkins">
 </a>
@@ -160,7 +169,9 @@ dependencies {
 
 
 <a id="allure"></a>
+
 #### <img alt="Allure" height="50" src="readme_files/technologies/allure_testops.svg" width="50"/>Allure TestOps</a><img alt="Allure" height="50" src="readme_files/technologies/allure.svg" width="50"/>Allure</a>
+
 > *Формирование отчетов по результам прогона автотестов*
 
 <table>
@@ -205,7 +216,9 @@ dependencies {
 
 
 <a id="telegram"></a>
+
 #### <img alt="Telegram" height="50" src="readme_files/technologies/telegram.svg" width="50"/></a> <img alt="Email" height="50" src="#" width="50"/></a>
+
 > *Предоставление оперативной информации о результатах прогона автотестов*
 
 
