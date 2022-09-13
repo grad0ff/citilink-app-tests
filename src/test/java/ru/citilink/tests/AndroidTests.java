@@ -31,7 +31,7 @@ public class AndroidTests extends TestBase {
 
         step("Run app", () -> {
             open();
-            sleep(1000); // ждем, пока прогрузятся попапы
+            sleep(1000); // Wait while all popups upload
         });
         step("Close all popups if they visible", () -> {
             BasePage.updateLater();
@@ -60,7 +60,7 @@ public class AndroidTests extends TestBase {
 
         step("Run app", () -> {
             open();
-            sleep(1000); // ждем, пока прогрузятся попапы
+            sleep(1000); // Wait while all popups upload
         });
         step("Close all popups if they visible", () -> {
             BasePage.updateLater();
