@@ -1,0 +1,26 @@
+{
+  "base": {
+    "logo": "src/test/resources/files/Logo.jpg",
+    "project": "citilink.ru",
+    "environment": "${BROWSER}, ${WINDOW_SIZE}",
+    "comment": "project of tests",
+    "reportLink": "${BUILD_URL}",
+    "language": "en",
+    "allureFolder": "build/reports/allure-report/",
+    "enableChart": true
+  },
+  "telegram": {
+    "token": "5303601437:AAHp6RcpfsfVc80VVUnAg5mRM6fr8AAVbQ8",
+    "chat": "389552179",
+    "replyTo": ""
+  },
+  "mail": {
+    "host": "smtp.yandex.ru",
+    "port": "465",
+    "username": "test.grad0ff@yandex.ru",
+    "password": "newTestPassword",
+    "securityProtocol": "SSL",
+    "from": "test.grad0ff@yandex.ru",
+    "recipient": "grad0ff@mail.ru"
+  }
+}
