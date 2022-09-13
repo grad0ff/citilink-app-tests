@@ -1,9 +1,9 @@
 {
   "base": {
     "logo": "src/test/resources/files/Logo.jpg",
-    "project": "citilink.ru",
+    "project": "citilink_app",
     "environment": "${BROWSER}, ${WINDOW_SIZE}",
-    "comment": "project of tests",
+    "comment": "Android Tests Project",
     "reportLink": "${BUILD_URL}",
     "language": "en",
     "allureFolder": "build/reports/allure-report/",
@@ -18,9 +18,9 @@
     "host": "smtp.yandex.ru",
     "port": "465",
     "username": "test.grad0ff@yandex.ru",
-    "password": "newTestPassword",
+    "password": "adtcjajizpoegezs",
     "securityProtocol": "SSL",
     "from": "test.grad0ff@yandex.ru",
-    "recipient": "grad0ff@mail.ru"
+    "recipient": "test.grad0ff@yandex.ru, grad0ff@mail.ru"
   }
 }
