@@ -30,7 +30,7 @@ public class AndroidTests extends TestBase {
     void editProfileSettingsTest() {
         ProfilePage profilePage = new ProfilePage();
 
-        step("Run App", () -> {
+        step("Run app", () -> {
             open();
             sleep(1000); // ждем, пока прогрузятся попапы
         });
@@ -40,47 +40,47 @@ public class AndroidTests extends TestBase {
         });
         step("Tap by profile icon at footer", BasePage::tapByProfileIcon);
         step("Tap by login button'", profilePage::tapByAuthButton);
-        step("Нажимаем на ссылку 'Вход по паролю'", () ->
-                profilePage.authPopup.tapByLoginWithPasswordLink());
-        step("Вводим логин и пароль", () ->
-                profilePage.authPopup.inputLoginAndPassword(credentialsConfig.getEmail(), credentialsConfig.getPassword()));
-        step("Нажимаем на кнопку 'Войти'", () ->
-                profilePage.authPopup.tapByEnterButton());
-        step("Проверяем, что пользователь авторизовался", () ->
+        step("Authorize in app by login and password", () -> {
+            profilePage.authPopup
+                    .tapByLoginWithPasswordLink()
+                    .inputLoginAndPassword(credentialsConfig.getEmail(), credentialsConfig.getPassword())
+                    .tapByEnterButton();
+        });
+        step("Check that user is successful authorized", () ->
                 profilePage.userEmailLabel.shouldHave(text("@")));
     }
 
     @Test
-    @Story("Пользователь меняет город в профиле")
-    @Description("Пользователь авторизуется в мобильном приложении и меняет город")
-    @DisplayName("Тест редактирования города пользователя в приложении")
+    @Story("User change city in profile settings")
+    @Description("Check that authorized user can change city in profile settings")
+    @DisplayName("City changing test")
     void changeCityTest() {
         ProfilePage profilePage = new ProfilePage();
         SelectCityComponent cityComponent = new SelectCityComponent();
         String newCityName = Cities.getRandomCity().toString();
 
-        step("Запускаем приложение", () -> {
+        step("Run app", () -> {
             open();
-            sleep(1000); // ждем, пока прогрузятся все попапы
+            sleep(1000); // ждем, пока прогрузятся попапы
         });
-        step("Закрываем все попапы на стартовой странице, если они появятся", () -> {
+        step("Close all popups if they visible", () -> {
             BasePage.updateLater();
             switchTo().alert().accept();
         });
-        step("Нажимаем на иконку профиля в футере", BasePage::tapByProfileIcon);
-        step("Авторизуемся по логину и паролю", () -> {
-            profilePage.tapByAuthButton();
+        step("Tap by profile icon at footer", BasePage::tapByProfileIcon);
+        step("Tap by login button'", profilePage::tapByAuthButton);
+        step("Authorize in app by login and password", () -> {
             profilePage.authPopup
                     .tapByLoginWithPasswordLink()
                     .inputLoginAndPassword(credentialsConfig.getEmail(), credentialsConfig.getPassword())
                     .tapByEnterButton();
             profilePage.userEmailLabel.shouldHave(text("@"));
         });
-        step("Нажимаем на ссылку с названием текущего города)", profilePage::tapByCityLabel);
-        step("Нажимаем на иконку поиска", cityComponent::tapBySearchIcon);
-        step("В поле поиска вводим текст", () -> cityComponent.inputCityName(newCityName));
-        step("Заполняем поля личных данных", cityComponent::tapBySearchingResult);
-        step("Проверяем, что название города в профиле изменилось на новое", () ->
+        step("Tap by current city link", profilePage::tapByCityLabel);
+        step("Tap by search icon", cityComponent::tapBySearchIcon);
+        step("Input text", () -> cityComponent.inputCityName(newCityName));
+        step("Tap by found city name", cityComponent::tapBySearchingResult);
+        step("Make sure that the name of the city has changed ", () ->
                 profilePage.cityLabel.shouldHave(text(newCityName)));
     }
 }
