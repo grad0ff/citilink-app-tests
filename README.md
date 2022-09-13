@@ -56,7 +56,7 @@ gradle clean test
 -DdeviceHost=${DEVICE_HOST}
 ```
 
-> `${DEVICE_HOST}` - устройство для прогона тестов [ browserstack <sub>(default)</sub> , *emulator* , *real*  ]
+> `${DEVICE_HOST}` - устройство для прогона тестов [ *browserstack* <sub>(default)</sub> , *emulator* , *real*  ]
 
 
 
