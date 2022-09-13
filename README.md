@@ -1,4 +1,5 @@
-<a href="https://www.citilink.ru/"><img alt="citilink.ru" height="50" src="readme_files/citilink.gif"/></a>
+<a href="https://www.citilink.ru/"><img alt="citilink.ru" height="40" src="readme_files/citilink.gif"/>
+</a>
 # Сitilink App. Автотесты на Java
 
 ## Содержание :bookmark_tabs:
