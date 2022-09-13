@@ -1,0 +1,79 @@
+plugins {
+    id 'java-library'
+    id 'io.qameta.allure' version '2.10.0'
+    id 'io.freefair.lombok' version '6.5.0.3'
+}
+
+group 'ru.citilink'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+def jUnitVersion = '5.8.2',
+    appiumVersion = "8.0.0",
+    selenideVersion = '6.5.2',
+    restAssuredVersion = '5.1.1',
+    ownerVersion = '1.0.12',
+    gsonVersion = '2.9.1',
+    javaFakerVersion = '1.0.2',
+    assertjVersion = '3.23.1',
+    allureVersion = '2.18.1',
+    commonsIoVersion = "2.11.0",
+    slf4jVersion = '1.7.36'
+
+dependencies {
+    testImplementation(
+            "org.junit.jupiter:junit-jupiter:$jUnitVersion",
+            "io.appium:java-client:$appiumVersion",
+            "com.codeborne:selenide:$selenideVersion",
+            "io.appium:java-client:$appiumVersion",
+            "io.rest-assured:rest-assured:$restAssuredVersion",
+            "org.aeonbits.owner:owner:$ownerVersion",
+//            "com.google.code.gson:gson:$gsonVersion",
+//            "com.github.javafaker:javafaker:$javaFakerVersion",
+//            "org.assertj:assertj-core:$assertjVersion",
+            "io.qameta.allure:allure-selenide:$allureVersion",
+            "io.qameta.allure:allure-rest-assured:$allureVersion",
+            "commons-io:commons-io:$commonsIoVersion",
+            "org.slf4j:slf4j-simple:$slf4jVersion",
+    )
+}
+
+allure {
+    report {
+        version.set(allureVersion)
+    }
+    adapter {
+        aspectjWeaver.set(true)
+        frameworks {
+            junit5 {
+                adapterVersion.set(allureVersion)
+            }
+        }
+    }
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+tasks.withType(Test) {
+    systemProperty "file.encoding", "UTF-8"
+    systemProperties(System.getProperties())
+    useJUnitPlatform()
+
+    testLogging {
+        lifecycle {
+            events 'started', 'skipped', 'failed', 'standard_error', 'standard_out'
+            exceptionFormat 'short'
+        }
+    }
+}
+
+task mobile_tests(type: Test) {
+    useJUnitPlatform {
+        includeTags "mobile"
+    }
+}
