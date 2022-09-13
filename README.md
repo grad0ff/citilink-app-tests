@@ -13,9 +13,8 @@
     + <a href="#appium">Appium</a>
     + <a href="#browserstack">Browserstack</a>
     + <a href="#jenkins">Jenkins</a>
-    + <a href="#allure_testops">Allure TestOps</a>
-    + <a href="#allure">Allure</a>
-    + <a href="#notificatios">Уведомления</a>
+    + <a href="#allure">Allure TestOps, Allure Report</a>
+    + <a href="#notifications">Telegram, Email</a>
 
 
 
@@ -183,7 +182,7 @@ controls="controls" style="max-width: 730px;" poster="https://github.com/grad0ff
 
 
 <a id="allure"></a>
-#### <img alt="Allure" height="50" src="readme_files/technologies/allure_testops.svg" width="50"/>Allure TestOps</a><img alt="Allure" height="50" src="readme_files/technologies/allure.svg" width="50"/>Allure</a>
+#### <img alt="Allure" height="50" src="readme_files/technologies/allure_testops.svg" width="50"/>Allure TestOps</a><img alt="Allure" height="50" src="readme_files/technologies/allure.svg" width="50"/>Allure Report</a>
 
 > *Формирование отчетов по результам прогона автотестов*
 
@@ -241,8 +240,7 @@ controls="controls" style="max-width: 730px;" poster="https://github.com/grad0ff
 
 
 <a id="notifications"></a>
-
-#### <img alt="Telegram" height="50" src="readme_files/technologies/telegram.svg" width="50"/></a> <img alt="Email" height="50" src="readme_files/technologies/yandex_mail.png" width="50"/></a>
+#### <img alt="Telegram" height="50" src="readme_files/technologies/telegram.svg" width="50"/>Telegram</a> <img alt="Email" height="50" src="readme_files/technologies/yandex_mail.png" width="50"/>Email</a>
 
 > *Предоставление оперативной информации о результатах прогона автотестов*
 
