@@ -12,6 +12,7 @@ public class LocalMobileWDManager extends AbstractWDManager {
     public static LocalMobileWDManager create(Boolean isDevice) {
         LocalMobileDriver.config = config;
         LocalMobileDriver.isRealDevice = isDevice;
+
         return new LocalMobileWDManager();
     }
 

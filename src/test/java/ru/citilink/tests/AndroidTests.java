@@ -7,7 +7,6 @@ import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import ru.citilink.base.TestBase;
 import ru.citilink.enums.Cities;
 import ru.citilink.pages.BasePage;
 import ru.citilink.pages.ProfilePage;

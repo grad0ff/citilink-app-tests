@@ -14,6 +14,7 @@ public class BrowserstackMobileWDManager extends AbstractWDManager {
 
     public static BrowserstackMobileWDManager create() {
         BrowserstackMobileDriver.config = config;
+
         return new BrowserstackMobileWDManager();
     }
 
@@ -34,6 +35,7 @@ public class BrowserstackMobileWDManager extends AbstractWDManager {
 
     private String getVideoUrl(String sessionId) {
         String url = config.getVideoPath() + sessionId + ".json";
+
         return given()
                 .auth().basic(config.getUser(), config.getKey())
                 .log().all()

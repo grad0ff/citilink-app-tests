@@ -17,11 +17,13 @@ public enum Cities {
 
     public static Cities getRandomCity() {
         int randomNum = new Random().nextInt(cities.length);
+
         return cities[randomNum];
     }
 
     @Override
     public String toString() {
+
         return this.cityName;
     }
 }

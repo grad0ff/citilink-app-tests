@@ -1,4 +1,4 @@
-package ru.citilink.base;
+package ru.citilink.tests;
 
 import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.AfterAll;

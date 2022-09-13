@@ -14,17 +14,20 @@ public class AuthorisationPopupComponent {
 
     public AuthorisationPopupComponent tapByLoginWithPasswordLink() {
         loginWithPasswordLink.click();
+
         return this;
     }
 
     public AuthorisationPopupComponent inputLoginAndPassword(String login, String password) {
         loginInputField.sendKeys(login);
         passwordInputField.sendKeys(password);
+
         return this;
     }
 
     public AuthorisationPopupComponent tapByEnterButton() {
         enterButton.click();
+
         return this;
     }
 }

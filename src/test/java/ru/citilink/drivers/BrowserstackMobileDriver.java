@@ -35,6 +35,7 @@ public class BrowserstackMobileDriver implements WebDriverProvider {
         mutableCapabilities.setCapability("build", config.getBuildName());
         mutableCapabilities.setCapability("name", config.getName());
         mutableCapabilities.setCapability("deviceOrientation", "portrait");
+
         return new RemoteWebDriver(getBrowserstackUrl(), mutableCapabilities);
     }
 }
