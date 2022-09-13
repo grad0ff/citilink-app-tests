@@ -10,10 +10,4 @@ public interface CredentialsConfig extends Config {
 
     @Key("password")
     String getPassword();
-
-    @Key("authTokenName")
-    String getAuthTokenName();
-
-    @Key("authTokenValue")
-    String getAuthTokenValue();
 }

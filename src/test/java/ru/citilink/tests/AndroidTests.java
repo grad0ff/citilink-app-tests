@@ -17,7 +17,7 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 
-@Tag("mobile")
+@Tag("MOBILE")
 @Owner("grad0ff")
 @Feature("Work with App")
 @DisplayName("Android mobile tests")
