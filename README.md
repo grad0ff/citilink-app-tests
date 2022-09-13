@@ -1,9 +1,8 @@
 <a href="https://www.citilink.ru/"><img alt="citilink.ru" height="40" src="readme_files/citilink.gif"/></a>
-
 # Сitilink App. Автотесты на Java
 
-## Содержание :bookmark_tabs:
 
+## Содержание :bookmark_tabs:
 * <a href="#stack">Cтек технологий</a>
 * <a href="#objects">Объекты тестирования</a>
 * <a href="#console">Запуск тестов из консоли</a>
@@ -18,28 +17,28 @@
     + <a href="#allure">Allure</a>
     + <a href="#notificatios">Уведомления</a>
 
-<a id="stack"></a>
 
+
+<a id="stack"></a>
 ## Cтек технологий :hammer_and_wrench:
 
 <div align="center">
 <a href="https://www.jetbrains.com/idea/"><img alt="InteliJ IDEA" height="50" src="readme_files/technologies/intelij_idea.svg" width="50"/></a>
-<a href="https://www.java.com/"><img alt="Java" height="50" src="readme_files/technologies/Java.svg" width="50"/></a>
-<a href="https://junit.org/junit5/"><img alt="JUnit 5" height="50" src="readme_files/technologies/JUnit5.svg" width="50"/></a>
+<a href="https://www.java.com/"><img alt="Java" height="50" src="readme_files/technologies/java.svg" width="50"/></a>
+<a href="https://junit.org/junit5/"><img alt="JUnit 5" height="50" src="readme_files/technologies/junit5.svg" width="50"/></a>
 <a href="https://selenide.org/"><img alt="Selenide" height="50" src="readme_files/technologies/selenide.svg" width="50"/></a>
 <a href="https://appium.io/"><img alt="Appium" height="50" src="readme_files/technologies/appium.svg" width="50"/></a>
 <a href="https://www.browserstack.co"><img alt="Browserstack" height="50" src="readme_files/technologies/browserstack.svg" width="50"/></a>
-<a href="https://gradle.org/"><img alt="Gradle" height="50" src="readme_files/technologies/Gradle.svg" width="50"/></a>
-<a href="https://www.jenkins.io/"><img alt="Jenkins" height="50" src="readme_files/technologies/Jenkins.svg" width="50"/></a>
+<a href="https://gradle.org/"><img alt="Gradle" height="50" src="readme_files/technologies/gradle.svg" width="50"/></a>
+<a href="https://www.jenkins.io/"><img alt="Jenkins" height="50" src="readme_files/technologies/jenkins.svg" width="50"/></a>
 <a href="https://qameta.io/"><img alt="Allure TestOps" height="50" src="readme_files/technologies/allure_testops.svg" width="50"/></a>
-<a href="https://github.com/allure-framework/"><img alt="Allure" height="50" src="readme_files/technologies/Allure.svg" width="50"/></a>
-<a href="https://github.com/"><img alt="GitHub" height="50" src="readme_files/technologies/GitHub.svg" width="50"/></a>
+<a href="https://github.com/allure-framework/"><img alt="Allure" height="50" src="readme_files/technologies/allure.svg" width="50"/></a>
+<a href="https://github.com/"><img alt="GitHub" height="50" src="readme_files/technologies/github.svg" width="50"/></a>
 </div>
 
 
 
 <a id="objects"></a>
-
 ## Объекты тестирования :mag:
 
 Разработаны автотесты для проверок:
@@ -48,8 +47,9 @@
 
 :white_check_mark: смены пользователем текущего города
 
-<a id="console"></a>
 
+
+<a id="console"></a>
 ## Запуск тестов из консоли :computer:
 
 ```bash
@@ -59,10 +59,12 @@ gradle clean test
 
 > `${DEVICE_HOST}` - устройство для прогона тестов [ browserstack <sub>(default)</sub> , *emulator* , *real*  ]
 
-## Код :floppy_disk:
+
 
 <a id="code"></a>
+## Код :floppy_disk:
 
+<a id="intelij"></a>
 #### <img alt="InteliJ IDEA" height="50" src="readme_files/technologies/intelij_idea.svg" width="50"/>InteliJ IDEA</a><img alt="Java" height="50" src="readme_files/technologies/java.svg" width="50"/>Java</a><img alt="JUnit 5" height="50" src="readme_files/technologies/junit5.svg" width="50"/>JUnit 5</a><img alt="Selenide" height="50" src="readme_files/technologies/selenide.svg" width="50"/>Selenide</a>
 
 > *Оформление кода автотестов*
@@ -106,7 +108,7 @@ public class AndroidTests extends TestBase {
 
 
 <a id="gradle"></a>
-#### <img alt="Gradle" height="50" src="readme_files/technologies/Gradle.svg" width="50"/>Gradle</a>
+#### <img alt="Gradle" height="50" src="readme_files/technologies/gradle.svg" width="50"/>Gradle</a>
 
 > *Автоматическая сборка проекта и управление зависимостями*
 
@@ -145,69 +147,92 @@ dependencies {
 ```
 
 
+<a id="screenshot"></a>
+## Скриншоты и видео :camera_flash:
 
 <a id="appium"></a>
-#### > <img alt="Appium" height="50" src="readme_files/technologies/appium.svg" width="50"/>Appium</a>
+#### <img alt="Appium" height="50" src="readme_files/technologies/appium.svg" width="50"/>Appium</a>
 
-> *Обчепечение прогона автотестов на эмуляторе или реальном устройстве*
+> *Обеспечение прогона автотестов на эмуляторе или реальном устройстве*
 
-<img src="#" alt="Appium">
+<img src="https://user-images.githubusercontent.com/72714071/189983519-dd14ecaf-914b-47a7-9e47-ffb885634169.png" alt="Appium">
 
+
+
+<a id="browserstack"></a>
+#### <img alt="Browserstack" height="50" src="readme_files/technologies/browserstack.svg" width="50"/>Browserstack</a>
+
+<div align="center">
+<video src="https://user-images.githubusercontent.com/72714071/189986821-0965469e-490b-4137-8a36-6ee1a844bc3d.mp4"
+controls="controls" style="max-width: 730px;" poster="https://github.com/grad0ff/citilink-app-tests/blob/master/readme_files/technologies/browserstack.svg">
+Видео недоступно.
+</video>
+</div>
 
 
 <a id="jenkins"></a>
-
-#### <a href="https://www.jenkins.io/"><img alt="Jenkins" height="50" src="readme_files/technologies/Jenkins.svg" width="50"/>Jenkins</a>
+#### <img alt="Jenkins" height="50" src="readme_files/technologies/jenkins.svg" width="50"/>Jenkins</a>
 
 > *Решение комплекса задач по сборке проекта, прогону автотестов, получению отчетов и отправке уведомлений по
 результатам сборки*
 
-<a href="https://jenkins.autotests.cloud/job/013-grad0ff-14-itoolabs/">
-<img src="https://user-images.githubusercontent.com/72714071/177363720-95c14959-fac7-4af4-9145-eb1987631229.png" alt="Jenkins">
+<a href="https://jenkins.autotests.cloud/job/013-grad0ff-citilink_app/">
+<img src="https://user-images.githubusercontent.com/72714071/189988989-d6e9ab61-7f83-48de-959e-c22647cd8f02.png" alt="Jenkins">
 </a>
 
 
 
 <a id="allure"></a>
-
 #### <img alt="Allure" height="50" src="readme_files/technologies/allure_testops.svg" width="50"/>Allure TestOps</a><img alt="Allure" height="50" src="readme_files/technologies/allure.svg" width="50"/>Allure</a>
 
 > *Формирование отчетов по результам прогона автотестов*
 
 <table>
-    <tr>
+     <tr>
         <td>
-        <a href="https://jenkins.autotests.cloud/job/013-grad0ff-14-itoolabs/allure/#">
-        <img src="https://user-images.githubusercontent.com/72714071/177333637-beabaa93-b50e-414e-a879-7a2c3ecdef56.png">
+        <a href="https://allure.autotests.cloud/project/1577/dashboards">
+        <img src="https://user-images.githubusercontent.com/72714071/189997376-8c538270-37d5-49b2-b736-0db7358fdd04.png">
         </a>
         </td>
         <td>
-        <a href="https://jenkins.autotests.cloud/job/013-grad0ff-14-itoolabs/allure/#suites/3fe6c9430eeb6f86d0ad005f3508c577/ab463357776f237c/">
-        <img src="https://user-images.githubusercontent.com/72714071/177332881-fcefcefe-eb14-41a1-baab-70c52ffb344c.png">
+        <a href="https://allure.autotests.cloud/project/1577/test-cases/12180?treeId=0">
+        <img src="https://user-images.githubusercontent.com/72714071/189997669-0841b599-dc6e-4ecf-b06c-f3f34b35b343.png">
+        </a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+        <a href="">
+        <img src="31">
+        </a>
+        </td>
+        <td>
+        <a href="">
+        <img src="32">
+        </a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+        <a href="https://jenkins.autotests.cloud/job/013-grad0ff-citilink_app/3/allure/">
+        <img src="https://user-images.githubusercontent.com/72714071/189989911-c386b009-4f2c-47bc-9bfd-cf52b9f590c9.png">
+        </a>
+        </td>
+        <td>
+        <a href="https://jenkins.autotests.cloud/job/013-grad0ff-citilink_app/3/allure/#suites/350d01b1998bf4d3a515c65511d39529/ecbf6fbd4caae630/">
+        <img src="https://user-images.githubusercontent.com/72714071/189990175-90527087-533d-4ee6-b2c0-d79c3d4f6ae3.png">
         </a>
         </td>
     </tr>
         <tr>
         <td>
-        <a href="https://jenkins.autotests.cloud/job/013-grad0ff-14-itoolabs/allure/#behaviors">
-        <img src="https://user-images.githubusercontent.com/72714071/177333506-c7517b6e-7c80-4600-970c-21e36a38bb1d.png">
+        <a href="https://jenkins.autotests.cloud/job/013-grad0ff-citilink_app/3/allure/#graph">
+        <img src="https://user-images.githubusercontent.com/72714071/189990670-c4a41b2a-c6b2-4436-a88c-8c6c68626667.png">
         </a>
         </td>
         <td>
-        <a href="https://jenkins.autotests.cloud/job/013-grad0ff-14-itoolabs/allure/#suites/3fe6c9430eeb6f86d0ad005f3508c577/ab463357776f237c/">
-        <img src="https://user-images.githubusercontent.com/72714071/177361087-a7047f2e-c7e1-4291-a255-5b189c40a0d2.png">*
-        </a>
-        </td>
-    </tr>
-    <tr>
-        <td>
-        <a href="https://jenkins.autotests.cloud/job/013-grad0ff-14-itoolabs/allure/#suites/3fe6c9430eeb6f86d0ad005f3508c577/8d36d319e2132404/">
-        <img src="https://user-images.githubusercontent.com/72714071/177543609-abcd962c-f5e8-4d0c-9e85-423901e7b0f5.png">
-        </a>
-        </td>
-        <td>
-        <a href="">
-        <img src="https://user-images.githubusercontent.com/72714071/177543805-4028d54c-4654-43b3-b052-9af01cf8e243.png">
+        <a href="https://jenkins.autotests.cloud/job/013-grad0ff-citilink_app/3/allure/#suites/350d01b1998bf4d3a515c65511d39529/ecbf6fbd4caae630/">
+        <img src="https://user-images.githubusercontent.com/72714071/189991150-e6c15a15-af45-47f9-ae1e-59f9974690f1.png">*
         </a>
         </td>
     </tr>
@@ -215,11 +240,21 @@ dependencies {
 
 
 
-<a id="telegram"></a>
+<a id="notifications"></a>
 
-#### <img alt="Telegram" height="50" src="readme_files/technologies/telegram.svg" width="50"/></a> <img alt="Email" height="50" src="#" width="50"/></a>
+#### <img alt="Telegram" height="50" src="readme_files/technologies/telegram.svg" width="50"/></a> <img alt="Email" height="50" src="readme_files/technologies/yandex_mail.png" width="50"/></a>
 
 > *Предоставление оперативной информации о результатах прогона автотестов*
 
-
-![Telegram](https://user-images.githubusercontent.com/72714071/177325044-c147556f-d2d6-498b-8397-bb016aa9927d.png)
+<table>
+     <tr>
+        <td>
+        <img src="https://user-images.githubusercontent.com/72714071/189994516-cc7b8ca7-2971-4265-a0ed-42f72278ccbc.png" alt="Telegram">
+        </a>
+        </td>
+        <td>
+        <img src="https://user-images.githubusercontent.com/72714071/189995092-0979a150-d9fe-4da0-9a42-35f2de86377b.png" alt="Email">
+        </a>
+        </td>
+    </tr>
+ </table>   
