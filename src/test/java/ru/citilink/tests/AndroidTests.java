@@ -1,6 +1,5 @@
 package ru.citilink.tests;
 
-import io.qameta.allure.Description;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Story;
@@ -24,14 +23,13 @@ public class AndroidTests extends TestBase {
 
     @Test
     @Story("User authorizes in app by login and password")
-    @Description("Check that user can authorize in app by login and password")
     @DisplayName("Authorization by login/password test")
     void editProfileSettingsTest() {
         ProfilePage profilePage = new ProfilePage();
 
         step("Run app", () -> {
             open();
-            sleep(1000); // Wait while all popups upload
+            sleep(1000); // wait while all popups upload
         });
         step("Close all popups if they visible", () -> {
             BasePage.updateLater();
@@ -51,7 +49,6 @@ public class AndroidTests extends TestBase {
 
     @Test
     @Story("User change city in profile settings")
-    @Description("Check that authorized user can change city in profile settings")
     @DisplayName("City changing test")
     void changeCityTest() {
         ProfilePage profilePage = new ProfilePage();
@@ -60,7 +57,7 @@ public class AndroidTests extends TestBase {
 
         step("Run app", () -> {
             open();
-            sleep(1000); // Wait while all popups upload
+            sleep(1000); // wait while all popups upload
         });
         step("Close all popups if they visible", () -> {
             BasePage.updateLater();

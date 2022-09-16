@@ -69,7 +69,6 @@ gradle clean test
 > *Оформление кода автотестов*
 
 ```java
-
 @Tag("MOBILE")
 @Owner("grad0ff")
 @Feature("Work with App")
@@ -78,7 +77,6 @@ public class AndroidTests extends TestBase {
 
     @Test
     @Story("User authorizes in app by login and password")
-    @Description("Check that user can authorize in app by login and password")
     @DisplayName("Authorization by login/password test")
     void editProfileSettingsTest() {
         ProfilePage profilePage = new ProfilePage();
@@ -162,7 +160,7 @@ dependencies {
 #### <img alt="Browserstack" height="50" src="readme_files/technologies/browserstack.svg" width="50"/>Browserstack</a>
 
 <div align="center">
-<video src="https://user-images.githubusercontent.com/72714071/189986821-0965469e-490b-4137-8a36-6ee1a844bc3d.mp4"
+<video src="https://user-images.githubusercontent.com/72714071/189986821-0965469e-490b-4137-8a36-6ee1a844bc3d.mp4" 
 controls="controls" style="max-width: 730px;" poster="https://github.com/grad0ff/citilink-app-tests/blob/master/readme_files/technologies/browserstack.svg">
 Видео недоступно.
 </video>
@@ -247,12 +245,10 @@ controls="controls" style="max-width: 730px;" poster="https://github.com/grad0ff
 <table>
      <tr>
         <td>
-        <img src="https://user-images.githubusercontent.com/72714071/189994516-cc7b8ca7-2971-4265-a0ed-42f72278ccbc.png" alt="Telegram">
-        </a>
+            <img src="https://user-images.githubusercontent.com/72714071/189994516-cc7b8ca7-2971-4265-a0ed-42f72278ccbc.png" alt="Telegram">
         </td>
         <td>
-        <img src="https://user-images.githubusercontent.com/72714071/189995092-0979a150-d9fe-4da0-9a42-35f2de86377b.png" alt="Email">
-        </a>
+            <img src="https://user-images.githubusercontent.com/72714071/189995092-0979a150-d9fe-4da0-9a42-35f2de86377b.png" alt="Email">
         </td>
     </tr>
  </table>   
