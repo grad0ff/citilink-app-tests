@@ -6,32 +6,32 @@ import org.aeonbits.owner.Config;
 public interface BrowserstackConfig extends Config {
 
     @Key("user")
-    String getUser();
+    String user();
 
     @Key("key")
-    String getKey();
+    String key();
 
     @Key("serverUrl")
-    String getServerUrl();
+    String serverUrl();
 
     @Key("browserstackPath")
-    String getBrowserstackPath();
+    String browserstackPath();
 
     @Key("videoPath")
-    String getVideoPath();
+    String videoPath();
 
     @Key("device")
-    String getDevice();
+    String device();
 
     @Key("os_version")
-    String getOsVersion();
+    String osVersion();
 
     @Key("project")
-    String getProjectName();
+    String projectName();
 
     @Key("build")
-    String getBuildName();
+    String buildName();
 
     @Key("name")
-    String getName();
+    String name();
 }

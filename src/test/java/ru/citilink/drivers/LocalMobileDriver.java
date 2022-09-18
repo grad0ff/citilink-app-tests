@@ -19,7 +19,7 @@ public class LocalMobileDriver implements WebDriverProvider {
 
     private static URL getAppiumServerUrl() {
         try {
-            return new URL(config.getServerUrl());
+            return new URL(config.serverUrl());
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }
@@ -27,15 +27,15 @@ public class LocalMobileDriver implements WebDriverProvider {
 
     @Override
     public WebDriver createDriver(Capabilities capabilities) {
-        File app = new File(config.getApkPath());
+        File app = new File(config.apkPath());
         String device;
         String deviceOs;
         if (isRealDevice) {
-            device = config.getRealDevice();
-            deviceOs = config.getRealDeviceOs();
+            device = config.realDevice();
+            deviceOs = config.realDeviceOs();
         } else {
-            device = config.getEmulatorDevice();
-            deviceOs = config.getEmulatorDeviceOs();
+            device = config.emulatorDevice();
+            deviceOs = config.emulatorDeviceOs();
         }
         UiAutomator2Options options = new UiAutomator2Options();
         options.merge(capabilities);
@@ -44,8 +44,8 @@ public class LocalMobileDriver implements WebDriverProvider {
         options.setAutomationName(AutomationName.ANDROID_UIAUTOMATOR2);
         options.setPlatformName("Android");
         options.setApp(app.getAbsolutePath());
-        options.setAppPackage(config.getAppPackage());
-        options.setAppActivity(config.getAppActivity());
+        options.setAppPackage(config.appPackage());
+        options.setAppActivity(config.appActivity());
 
         return new AndroidDriver(getAppiumServerUrl(), options);
     }

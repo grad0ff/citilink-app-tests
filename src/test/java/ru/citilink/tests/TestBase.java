@@ -28,7 +28,7 @@ public class TestBase {
                 manager = LocalMobileWDManager.create(true);
                 break;
             default:
-                throw new RuntimeException("DeviceHost is not defined!");
+                throw new RuntimeException("Device Host is not defined!");
         }
     }
 

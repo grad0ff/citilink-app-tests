@@ -6,26 +6,26 @@ import org.aeonbits.owner.Config;
 public interface LocalDriverConfig extends Config {
 
     @Key("apkPath")
-    String getApkPath();
+    String apkPath();
 
     @Key("serverUrl")
-    String getServerUrl();
+    String serverUrl();
 
     @Key("appPackage")
-    String getAppPackage();
+    String appPackage();
 
     @Key("appActivity")
-    String getAppActivity();
+    String appActivity();
 
     @Key("realDevice")
-    String getRealDevice();
+    String realDevice();
 
     @Key("realDeviceOs")
-    String getRealDeviceOs();
+    String realDeviceOs();
 
     @Key("emulatorDevice")
-    String getEmulatorDevice();
+    String emulatorDevice();
 
     @Key("emulatorDeviceOs")
-    String getEmulatorDeviceOs();
+    String emulatorDeviceOs();
 }

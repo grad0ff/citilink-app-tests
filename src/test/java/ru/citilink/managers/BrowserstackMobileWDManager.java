@@ -34,10 +34,10 @@ public class BrowserstackMobileWDManager extends AbstractWDManager {
     }
 
     private String getVideoUrl(String sessionId) {
-        String url = config.getVideoPath() + sessionId + ".json";
+        String url = config.videoPath() + sessionId + ".json";
 
         return given()
-                .auth().basic(config.getUser(), config.getKey())
+                .auth().basic(config.user(), config.key())
                 .log().all()
                 .when()
                 .get(url)

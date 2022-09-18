@@ -38,9 +38,8 @@ public class AndroidTests extends TestBase {
         step("Tap by profile icon at footer", BasePage::tapByProfileIcon);
         step("Tap by login button'", profilePage::tapByAuthButton);
         step("Authorize in app by login and password", () -> {
-            profilePage.authPopup
-                    .tapByLoginWithPasswordLink()
-                    .inputLoginAndPassword(credentialsConfig.getEmail(), credentialsConfig.getPassword())
+            profilePage.authPopup.tapByLoginWithPasswordLink()
+                    .inputLoginAndPassword(credentialsConfig.email(), credentialsConfig.password())
                     .tapByEnterButton();
         });
         step("Check that user is successful authorized", () ->
@@ -66,9 +65,8 @@ public class AndroidTests extends TestBase {
         step("Tap by profile icon at footer", BasePage::tapByProfileIcon);
         step("Tap by login button'", profilePage::tapByAuthButton);
         step("Authorize in app by login and password", () -> {
-            profilePage.authPopup
-                    .tapByLoginWithPasswordLink()
-                    .inputLoginAndPassword(credentialsConfig.getEmail(), credentialsConfig.getPassword())
+            profilePage.authPopup.tapByLoginWithPasswordLink()
+                    .inputLoginAndPassword(credentialsConfig.email(), credentialsConfig.password())
                     .tapByEnterButton();
             profilePage.userEmailLabel.shouldHave(text("@"));
         });

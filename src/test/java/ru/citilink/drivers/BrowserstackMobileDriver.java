@@ -16,7 +16,7 @@ public class BrowserstackMobileDriver implements WebDriverProvider {
 
     private static URL getBrowserstackUrl() {
         try {
-            return new URL(config.getServerUrl());
+            return new URL(config.serverUrl());
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }
@@ -26,14 +26,14 @@ public class BrowserstackMobileDriver implements WebDriverProvider {
     public WebDriver createDriver(Capabilities capabilities) {
         MutableCapabilities mutableCapabilities = new MutableCapabilities();
         mutableCapabilities.merge(capabilities);
-        mutableCapabilities.setCapability("browserstack.user", config.getUser());
-        mutableCapabilities.setCapability("browserstack.key", config.getKey());
-        mutableCapabilities.setCapability("app", config.getBrowserstackPath());
-        mutableCapabilities.setCapability("device", config.getDevice());
-        mutableCapabilities.setCapability("os_version", config.getOsVersion());
-        mutableCapabilities.setCapability("project", config.getProjectName());
-        mutableCapabilities.setCapability("build", config.getBuildName());
-        mutableCapabilities.setCapability("name", config.getName());
+        mutableCapabilities.setCapability("browserstack.user", config.user());
+        mutableCapabilities.setCapability("browserstack.key", config.key());
+        mutableCapabilities.setCapability("app", config.browserstackPath());
+        mutableCapabilities.setCapability("device", config.device());
+        mutableCapabilities.setCapability("os_version", config.osVersion());
+        mutableCapabilities.setCapability("project", config.projectName());
+        mutableCapabilities.setCapability("build", config.buildName());
+        mutableCapabilities.setCapability("name", config.name());
         mutableCapabilities.setCapability("deviceOrientation", "portrait");
 
         return new RemoteWebDriver(getBrowserstackUrl(), mutableCapabilities);
